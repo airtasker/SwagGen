@@ -80,6 +80,7 @@ public {{ options.modelType }} {{ type }}: {% if parent %}{{ parent.type }}{% el
         {% endif %}
     }
 
+    {% if properties.count > 0 %}
     public {% if options.modelType == 'class' %}required {% endif %}init(from decoder: Decoder) throws {
         {% if properties.count > 0 %}
         let container = try decoder.container(keyedBy: StringCodingKey.self)
@@ -109,7 +110,9 @@ public {{ options.modelType }} {{ type }}: {% if parent %}{{ parent.type }}{% el
         try super.init(from: decoder)
         {% endif %}
     }
+    {% endif %}
 
+    {% if properties.count > 0 %}
     public {% if parent %}override {% endif %}func encode(to encoder: Encoder) throws {
         {% if properties.count > 0 %}
         var container = encoder.container(keyedBy: StringCodingKey.self)
@@ -129,6 +132,7 @@ public {{ options.modelType }} {{ type }}: {% if parent %}{{ parent.type }}{% el
         try super.encode(to: encoder)
         {% endif %}
     }
+    {% endif %}
     {% if additionalPropertiesType %}
 
     public subscript(key: String) -> {{ additionalPropertiesType }}? {
