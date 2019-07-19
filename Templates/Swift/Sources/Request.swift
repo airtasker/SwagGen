@@ -77,7 +77,7 @@ extension {% if tag %}{{ options.tagPrefix }}{{ tag|upperCamelCase }}{{ options.
             {% if nonBodyParams %}
 
             /// convenience initialiser so an Option doesn't have to be created
-            public convenience init({% for param in nonBodyParams %}{{ param.name }}: {{ param.optionalType }}{% ifnot param.required %} = nil{% endif %}{% ifnot forloop.last %}, {% endif %}{% endfor %}{% if nonBodyParams and body %}, {% endif %}{% if body %}{{ body.name}}: {{ body.optionalType}}{% ifnot body.required %} = nil{% endif %}{% endif %}) {
+            public convenience init({% for param in nonBodyParams %}{{ param.name }}: {{ param.optionalType }}{% ifnot param.required %} = nil{% endif %}{% ifnot forloop.last %}, {% endif %}{% endfor %}{% if nonBodyParams and body %}, {% endif %}{% if body %}{{ body.name}}: {{ body.optionalType}}{% ifnot body.required %} = {{ body.optionalType }}(){% endif %}{% endif %}) {
                 {% if nonBodyParams %}
                 let options = Options({% for param in nonBodyParams %}{{param.name}}: {{param.name}}{% ifnot forloop.last %}, {% endif %}{% endfor %})
                 {% endif %}

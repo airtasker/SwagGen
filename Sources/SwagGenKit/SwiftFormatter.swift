@@ -197,7 +197,7 @@ public class SwiftFormatter: CodeFormatter {
     override func getRequestBodyContext(_ requestBody: PossibleReference<RequestBody>) -> Context {
         var context = super.getRequestBodyContext(requestBody)
         let type = context["type"] as! String
-        context["optionalType"] = type + (requestBody.value.required ? "" : "?")
+        context["optionalType"] = type
         return context
     }
 
