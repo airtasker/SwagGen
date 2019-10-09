@@ -192,7 +192,6 @@ paths:
       description: operation with string response
       responses:
         "200":
-          description: ""
           content:
             text/plain:
               schema:
@@ -270,6 +269,32 @@ components:
             name:
               description: name of the model
               type: string
+    ModelWithNullableProperties:
+      type: object
+      required:
+        - requiredNotNullable
+        - requiredNullable
+        - requiredImplicitNotNullable
+      properties:
+        notRequiredNotNullable:
+          type: string
+          description: "a not required and not nullable property"
+          nullable: false
+        notRequiredNullable:
+          type: string
+          description: "a not required and nullable property"
+          nullable: true
+        requiredNotNullable:
+          type: string
+          description: "a required and not nullable property"
+          nullable: false
+        requiredNullable:
+          type: string
+          description: "a required and nullable property"
+          nullable: true
+        requiredImplicitNotNullable:
+          type: string
+          description: "a required and not nullable property with nullable false implicitly declared"
     Zoo:
       type: object
       properties:
@@ -313,6 +338,13 @@ components:
         - type: object
           properties:
             barks:
+              type: boolean
+    Puppi:
+      allOf:
+        - $ref: "#/components/schemas/Dog"
+        - type: object
+          properties:
+            play:
               type: boolean
     Error:
       required:
