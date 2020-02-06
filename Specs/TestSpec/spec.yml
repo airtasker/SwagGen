@@ -381,3 +381,12 @@ components:
         value:
           type: string
       nullable: true
+    # This is actually not valid OpenApi3, but we use it anyway :D
+    ObjectWithRefPropertyAndNullable:
+      type: object
+      properties:
+        this_property_should_be_optional:
+          $ref: "#/components/schemas/Animal"
+          nullable: true
+      required:
+        - this_property_should_be_optional

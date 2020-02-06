@@ -225,7 +225,7 @@ public class SwiftFormatter: CodeFormatter {
         let type = context["type"] as! String
         let name = context["name"] as! String
 
-        context["optionalType"] = type + (property.nullable ? "?" : "")
+        context["optionalType"] = type + (property.optional ? "?" : "")
         var encodedValue = getEncodedValue(name: getName(name), type: type)
 
         if !property.required, let range = encodedValue.range(of: ".") {
