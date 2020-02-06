@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Fake {
+extension PetstoreTest.Fake {
 
     /** Fake endpoint for testing various parameters
 假端點

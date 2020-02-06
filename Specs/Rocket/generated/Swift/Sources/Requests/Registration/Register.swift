@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Registration {
+extension Rocket.Registration {
 
     /** Register a new user, creating them an account.
 Registration, when successful, will return an array of access tokens so the user is
@@ -25,11 +25,10 @@ email address. This confirmation is done via the /verify-email endpoint.
 
             public var body: RegistrationRequest
 
-            public init(body: RegistrationRequest) {
+            public init(body: RegistrationRequest, encoder: RequestEncoder? = nil) {
                 self.body = body
-                super.init(service: Register.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: Register.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
         }

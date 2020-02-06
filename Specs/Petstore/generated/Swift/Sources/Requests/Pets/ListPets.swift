@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Pets {
+extension Petstore.Pets {
 
     /** List all pets */
     public enum ListPets {

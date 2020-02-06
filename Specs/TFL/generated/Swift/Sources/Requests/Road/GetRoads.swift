@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Road {
+extension TFL.Road {
 
     /** Gets all roads managed by TfL */
     public enum GetRoads {

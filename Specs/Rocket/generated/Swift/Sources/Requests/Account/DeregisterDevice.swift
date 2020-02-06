@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Account {
+extension Rocket.Account {
 
     /** Deregister a playback device from an account. */
     public enum DeregisterDevice {

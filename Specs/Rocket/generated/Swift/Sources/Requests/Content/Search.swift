@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Content {
+extension Rocket.Content {
 
     /** Search the catalog of items and people. */
     public enum Search {

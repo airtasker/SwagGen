@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Account {
+extension Rocket.Account {
 
     /** Rename a device */
     public enum RenameDevice {

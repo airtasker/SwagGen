@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension StopPoint {
+extension TFL.StopPoint {
 
     /** Returns the route sections for all the lines that service the given stop point ids */
     public enum StopPointRoute {

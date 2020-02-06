@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Cabwise {
+extension TFL.Cabwise {
 
     /** Gets taxis and minicabs contact information */
     public enum CabwiseGet {

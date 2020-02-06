@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension User {
+extension PetstoreTest.User {
 
     /** Logs out current logged in user session */
     public enum LogoutUser {

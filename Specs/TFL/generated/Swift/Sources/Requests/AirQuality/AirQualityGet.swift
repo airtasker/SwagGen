@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension AirQuality {
+extension TFL.AirQuality {
 
     /** Gets air quality data feed */
     public enum AirQualityGet {

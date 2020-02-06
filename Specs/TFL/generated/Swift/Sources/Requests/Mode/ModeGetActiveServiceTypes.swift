@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Mode {
+extension TFL.Mode {
 
     /** Returns the service type active for a mode.
             Currently only supports tube */

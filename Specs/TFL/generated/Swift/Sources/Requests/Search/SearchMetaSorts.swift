@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Search {
+extension TFL.Search {
 
     /** Gets the available sorting options. */
     public enum SearchMetaSorts {

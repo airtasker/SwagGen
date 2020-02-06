@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Line {
+extension TFL.Line {
 
     /** Gets a list of the stations that serve the given line id */
     public enum LineStopPoints {

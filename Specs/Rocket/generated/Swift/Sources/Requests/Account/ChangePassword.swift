@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Account {
+extension Rocket.Account {
 
     /** Change the password of an account. */
     public enum ChangePassword {
@@ -16,11 +16,10 @@ extension Account {
 
             public var body: ChangePasswordRequest
 
-            public init(body: ChangePasswordRequest) {
+            public init(body: ChangePasswordRequest, encoder: RequestEncoder? = nil) {
                 self.body = body
-                super.init(service: ChangePassword.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: ChangePassword.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
         }

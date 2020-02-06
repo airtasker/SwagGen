@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Content {
+extension Rocket.Content {
 
     /** Returns an array of item lists with their first page of content resolved. */
     public enum GetLists {

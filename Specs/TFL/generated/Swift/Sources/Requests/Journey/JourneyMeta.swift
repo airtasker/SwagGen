@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Journey {
+extension TFL.Journey {
 
     /** Gets a list of all of the available journey planner modes */
     public enum JourneyMeta {

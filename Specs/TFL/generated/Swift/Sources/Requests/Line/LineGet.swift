@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Line {
+extension TFL.Line {
 
     /** Gets lines that match the specified line ids. */
     public enum LineGet {

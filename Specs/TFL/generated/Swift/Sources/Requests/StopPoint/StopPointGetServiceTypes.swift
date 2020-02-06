@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension StopPoint {
+extension TFL.StopPoint {
 
     /** Gets the service types for a given stoppoint */
     public enum StopPointGetServiceTypes {

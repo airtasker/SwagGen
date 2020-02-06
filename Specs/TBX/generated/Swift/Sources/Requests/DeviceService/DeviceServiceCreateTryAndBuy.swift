@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension DeviceService {
+extension TBX.DeviceService {
 
     public enum DeviceServiceCreateTryAndBuy {
 

@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Line {
+extension TFL.Line {
 
     /** Get disruptions for the given line ids */
     public enum LineDisruption {

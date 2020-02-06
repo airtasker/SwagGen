@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Road {
+extension TFL.Road {
 
     /** Get active disruptions, filtered by road ids */
     public enum GetRoadDisruption {

@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension StopPoint {
+extension TFL.StopPoint {
 
     /** Get car parks corresponding to the given stop point id. */
     public enum StopPointGetCarParksById {

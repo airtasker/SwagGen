@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Operation {
+extension TestSpec {
 
     /** Has all sorts of parameters */
     public enum PostAllParams {
@@ -80,12 +80,11 @@ extension Operation {
 
             public var body: Body?
 
-            public init(body: Body?, options: Options) {
+            public init(body: Body?, options: Options, encoder: RequestEncoder? = nil) {
                 self.body = body
                 self.options = options
-                super.init(service: PostAllParams.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: PostAllParams.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
 

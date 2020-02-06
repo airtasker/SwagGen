@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Auth {
+extension TBX.Auth {
 
     /** Check user device status */
     public enum AuthStatus {

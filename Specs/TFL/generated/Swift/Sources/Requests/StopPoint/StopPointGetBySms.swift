@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension StopPoint {
+extension TFL.StopPoint {
 
     /** Gets a StopPoint for a given sms code. */
     public enum StopPointGetBySms {

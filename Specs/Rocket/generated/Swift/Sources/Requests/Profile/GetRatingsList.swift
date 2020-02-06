@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Profile {
+extension Rocket.Profile {
 
     /** Returns the list of rated items under the active profile. */
     public enum GetRatingsList {

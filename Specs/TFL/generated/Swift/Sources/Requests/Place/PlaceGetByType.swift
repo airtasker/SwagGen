@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Place {
+extension TFL.Place {
 
     /** Gets all places of a given type */
     public enum PlaceGetByType {

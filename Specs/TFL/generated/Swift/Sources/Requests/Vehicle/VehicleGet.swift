@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Vehicle {
+extension TFL.Vehicle {
 
     /** Gets the predictions for a given list of vehicle Id's. */
     public enum VehicleGet {

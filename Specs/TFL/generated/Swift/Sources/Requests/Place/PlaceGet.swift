@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Place {
+extension TFL.Place {
 
     /** Gets the place with the given id. */
     public enum PlaceGet {

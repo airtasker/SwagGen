@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension UserService {
+extension TBX.UserService {
 
     /** Use a Token */
     public enum UserServiceUseToken {

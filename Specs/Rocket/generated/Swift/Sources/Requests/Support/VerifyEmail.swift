@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Support {
+extension Rocket.Support {
 
     /** When an account is created an email is sent to the email address of the new account.
 This contains a link, which once clicked, verifies the email address of the account is correct.

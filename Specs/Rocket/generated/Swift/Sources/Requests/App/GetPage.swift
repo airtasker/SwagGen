@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension App {
+extension Rocket.App {
 
     /** Returns a page with the specified id.
 If targeting the search page you must url encode the search term as a parameter

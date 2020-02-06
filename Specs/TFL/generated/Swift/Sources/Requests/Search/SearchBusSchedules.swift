@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Search {
+extension TFL.Search {
 
     /** Searches the bus schedules folder on S3 for a given bus number. */
     public enum SearchBusSchedules {

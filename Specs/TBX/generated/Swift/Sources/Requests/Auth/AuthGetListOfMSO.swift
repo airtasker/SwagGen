@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Auth {
+extension TBX.Auth {
 
     /** Get list of IDPs of Content Provider */
     public enum AuthGetListOfMSO {

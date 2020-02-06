@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension UserService {
+extension TBX.UserService {
 
     /** Create a new Device */
     public enum UserServiceCreateDevice {

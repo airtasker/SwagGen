@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Operation {
+extension TestSpec {
 
     /** operation with string response */
     public enum GetString {

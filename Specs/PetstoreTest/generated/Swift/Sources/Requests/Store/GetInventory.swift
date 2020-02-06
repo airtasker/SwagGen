@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Store {
+extension PetstoreTest.Store {
 
     /**
     Returns pet inventories by status

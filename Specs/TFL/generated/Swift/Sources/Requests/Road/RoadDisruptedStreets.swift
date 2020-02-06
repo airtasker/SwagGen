@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Road {
+extension TFL.Road {
 
     /** Gets a list of disrupted streets. If no date filters are provided, current disruptions are returned. */
     public enum RoadDisruptedStreets {

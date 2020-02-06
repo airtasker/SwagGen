@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Search {
+extension TFL.Search {
 
     /** Gets the available search categories. */
     public enum SearchMetaCategories {

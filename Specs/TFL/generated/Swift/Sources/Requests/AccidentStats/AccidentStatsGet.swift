@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension AccidentStats {
+extension TFL.AccidentStats {
 
     /** Gets all accident details for accidents occuring in the specified year */
     public enum AccidentStatsGet {

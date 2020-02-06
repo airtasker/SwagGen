@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Account {
+extension Rocket.Account {
 
     /** Get a registered device. */
     public enum GetDevice {

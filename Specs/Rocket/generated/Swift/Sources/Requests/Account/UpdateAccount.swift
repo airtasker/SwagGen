@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Account {
+extension Rocket.Account {
 
     /** Update the details of an account.
 This supports partial updates so you can send just the properties you wish to update.
@@ -18,11 +18,10 @@ This supports partial updates so you can send just the properties you wish to up
 
             public var body: AccountUpdateRequest
 
-            public init(body: AccountUpdateRequest) {
+            public init(body: AccountUpdateRequest, encoder: RequestEncoder? = nil) {
                 self.body = body
-                super.init(service: UpdateAccount.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: UpdateAccount.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
         }

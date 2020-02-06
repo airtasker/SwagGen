@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Account {
+extension Rocket.Account {
 
     /** Change the pin of an account. */
     public enum ChangePin {
@@ -16,11 +16,10 @@ extension Account {
 
             public var body: ChangePinRequest
 
-            public init(body: ChangePinRequest) {
+            public init(body: ChangePinRequest, encoder: RequestEncoder? = nil) {
                 self.body = body
-                super.init(service: ChangePin.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: ChangePin.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
         }

@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Place {
+extension TFL.Place {
 
     /** Gets all places that matches the given query */
     public enum PlaceSearch {

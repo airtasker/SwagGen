@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Place {
+extension TFL.Place {
 
     /** Gets the set of streets associated with a post code. */
     public enum PlaceGetStreetsByPostCode {

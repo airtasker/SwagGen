@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Account {
+extension Rocket.Account {
 
     /** Get the details of an account along with the profiles and entitlements under it. */
     public enum GetAccount {

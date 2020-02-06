@@ -9,12 +9,40 @@ public struct ObjectSchema {
     public let additionalProperties: Schema?
     public let abstract: Bool
     public let discriminator: Discriminator?
+
+    public init(requiredProperties: [Property],
+                optionalProperties: [Property],
+                properties: [Property],
+                minProperties: Int? = nil,
+                maxProperties: Int? = nil,
+                additionalProperties: Schema? = nil,
+                abstract: Bool = false,
+                discriminator: Discriminator? = nil) {
+        self.requiredProperties = requiredProperties
+        self.optionalProperties = optionalProperties
+        self.properties = properties
+        self.minProperties = minProperties
+        self.maxProperties = maxProperties
+        self.additionalProperties = additionalProperties
+        self.abstract = abstract
+        self.discriminator = discriminator
+    }
 }
 
 public struct Property {
     public let name: String
     public let required: Bool
     public let schema: Schema
+}
+
+public extension Property {
+    var nullable: Bool {
+        if case let .reference(ref) = schema.type {
+            return !required || ref.value.metadata.nullable
+        } else {
+            return !required || schema.metadata.nullable
+        }
+    }
 }
 
 extension ObjectSchema: JSONObjectConvertible {

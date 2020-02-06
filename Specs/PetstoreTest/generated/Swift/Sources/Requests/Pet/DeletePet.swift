@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Pet {
+extension PetstoreTest.Pet {
 
     /** Deletes a pet */
     public enum DeletePet {

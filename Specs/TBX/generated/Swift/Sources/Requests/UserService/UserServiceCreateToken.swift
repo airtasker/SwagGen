@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension UserService {
+extension TBX.UserService {
 
     /** Create a Token to automatically sing in a customer without pass to IDP login page */
     public enum UserServiceCreateToken {

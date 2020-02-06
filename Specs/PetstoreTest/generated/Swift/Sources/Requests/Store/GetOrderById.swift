@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Store {
+extension PetstoreTest.Store {
 
     /**
     Find purchase order by ID

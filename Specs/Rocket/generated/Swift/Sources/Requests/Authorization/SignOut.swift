@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Authorization {
+extension Rocket.Authorization {
 
     /** When a user signs out of an application we need to clear some
 basic cookies we assigned them during token authorization.

@@ -6,9 +6,8 @@
 import Foundation
 
 /** This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. */
-public let version = "1.0.0"
+public struct PetstoreTest {
 
-public struct Config {
     /// Whether to discard any errors when decoding optional properties
     public static var safeOptionalDecoding = false
 
@@ -16,16 +15,17 @@ public struct Config {
     public static var safeArrayDecoding = false
 
     /// Used to encode Dates when uses as string params
-    public static let dateEncodingFormatter = DateFormatter(formatString: "yyyy-MM-dd'T'HH:mm:ssZZZZZ")
+    public static var dateEncodingFormatter = DateFormatter(formatString: "yyyy-MM-dd'T'HH:mm:ssZZZZZ")
+
+    public static let version = "1.0.0"
+
+    public enum Fake {}
+    public enum Pet {}
+    public enum Store {}
+    public enum User {}
+
+    public enum Server {
+
+        public static let main = "http://petstore.swagger.io:80/v2"
+    }
 }
-
-public enum Server {
-
-    public static let main = "http://petstore.swagger.io:80/v2"
-}
-
-/// Tags
-public enum Fake {}
-public enum Pet {}
-public enum Store {}
-public enum User {}

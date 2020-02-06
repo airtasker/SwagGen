@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension User {
+extension PetstoreTest.User {
 
     /**
     Updated user
@@ -32,12 +32,11 @@ extension User {
 
             public var body: User
 
-            public init(body: User, options: Options) {
+            public init(body: User, options: Options, encoder: RequestEncoder? = nil) {
                 self.body = body
                 self.options = options
-                super.init(service: UpdateUser.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: UpdateUser.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
 

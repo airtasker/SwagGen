@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension UserService {
+extension TBX.UserService {
 
     /** Get Devices of Customer. */
     public enum UserServiceGetCustomerDevices {

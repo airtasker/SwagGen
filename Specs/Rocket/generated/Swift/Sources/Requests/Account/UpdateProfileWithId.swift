@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Account {
+extension Rocket.Account {
 
     /** Update the summary of a profile with a specific id under the active account.
 This supports partial updates so you can send just the properties you wish to update.
@@ -30,12 +30,11 @@ This supports partial updates so you can send just the properties you wish to up
 
             public var body: ProfileUpdateRequest
 
-            public init(body: ProfileUpdateRequest, options: Options) {
+            public init(body: ProfileUpdateRequest, options: Options, encoder: RequestEncoder? = nil) {
                 self.body = body
                 self.options = options
-                super.init(service: UpdateProfileWithId.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: UpdateProfileWithId.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
 

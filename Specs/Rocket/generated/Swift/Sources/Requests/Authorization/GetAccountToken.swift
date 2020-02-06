@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Authorization {
+extension Rocket.Authorization {
 
     /** Request one or more `Account` level authorization tokens each with a chosen scope.
 Tokens are used to access restricted service endpoints. These restricted endpoints
@@ -32,11 +32,10 @@ If neither a pin or password are supplied an http 400 error will be returned.
 
             public var body: AccountTokenRequest
 
-            public init(body: AccountTokenRequest) {
+            public init(body: AccountTokenRequest, encoder: RequestEncoder? = nil) {
                 self.body = body
-                super.init(service: GetAccountToken.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: GetAccountToken.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
         }

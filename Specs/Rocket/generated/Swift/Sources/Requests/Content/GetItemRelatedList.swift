@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Content {
+extension Rocket.Content {
 
     /** Returns the list of items related to the parent item.
 Note for now, due to the size of the list being unknown, only a single page will be returned.

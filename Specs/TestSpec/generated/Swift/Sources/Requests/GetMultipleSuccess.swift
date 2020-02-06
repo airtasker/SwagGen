@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Operation {
+extension TestSpec {
 
     /** operation with multiple success responses */
     public enum GetMultipleSuccess {

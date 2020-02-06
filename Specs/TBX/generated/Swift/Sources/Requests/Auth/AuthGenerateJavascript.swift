@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Auth {
+extension TBX.Auth {
 
     /** Get Javascript SDK */
     public enum AuthGenerateJavascript {

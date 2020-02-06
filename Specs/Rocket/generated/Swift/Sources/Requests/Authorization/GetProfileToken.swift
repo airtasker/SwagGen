@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Authorization {
+extension Rocket.Authorization {
 
     /** Request one or more `Profile` level authorization tokens each with a chosen scope.
 Tokens are used to access restricted service endpoints. These restriced endpoints
@@ -20,11 +20,10 @@ before access is granted.
 
             public var body: ProfileTokenRequest
 
-            public init(body: ProfileTokenRequest) {
+            public init(body: ProfileTokenRequest, encoder: RequestEncoder? = nil) {
                 self.body = body
-                super.init(service: GetProfileToken.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: GetProfileToken.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
         }

@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension AuthorizationService {
+extension TBX.AuthorizationService {
 
     public enum AuthorizationServiceGetUser {
 

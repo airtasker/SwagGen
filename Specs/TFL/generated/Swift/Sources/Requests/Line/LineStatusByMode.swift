@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Line {
+extension TFL.Line {
 
     /** Gets the line status of for all lines for the given modes */
     public enum LineStatusByMode {

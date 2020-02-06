@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Line {
+extension TFL.Line {
 
     /** Gets the timetable for a specified station on the give line */
     public enum LineTimetable {

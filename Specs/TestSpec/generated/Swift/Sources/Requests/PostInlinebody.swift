@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Operation {
+extension TestSpec {
 
     /** operation with an inline body */
     public enum PostInlinebody {
@@ -54,11 +54,10 @@ extension Operation {
 
             public var body: Body
 
-            public init(body: Body) {
+            public init(body: Body, encoder: RequestEncoder? = nil) {
                 self.body = body
-                super.init(service: PostInlinebody.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: PostInlinebody.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
         }

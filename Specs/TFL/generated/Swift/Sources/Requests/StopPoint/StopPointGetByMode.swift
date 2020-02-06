@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension StopPoint {
+extension TFL.StopPoint {
 
     /** Gets a list of StopPoints filtered by the modes available at that StopPoint. */
     public enum StopPointGetByMode {

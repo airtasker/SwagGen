@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension StopPoint {
+extension TFL.StopPoint {
 
     /** Gets the list of available StopPoint types */
     public enum StopPointMetaStopTypes {

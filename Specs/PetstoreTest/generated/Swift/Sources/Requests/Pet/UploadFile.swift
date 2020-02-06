@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Pet {
+extension PetstoreTest.Pet {
 
     /** uploads an image */
     public enum UploadFile {

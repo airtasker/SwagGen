@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Authorization {
+extension Rocket.Authorization {
 
     /** Refresh an account or profile level authorization token which is marked as refreshable. */
     public enum RefreshToken {
@@ -16,11 +16,10 @@ extension Authorization {
 
             public var body: TokenRefreshRequest
 
-            public init(body: TokenRefreshRequest) {
+            public init(body: TokenRefreshRequest, encoder: RequestEncoder? = nil) {
                 self.body = body
-                super.init(service: RefreshToken.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: RefreshToken.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
         }

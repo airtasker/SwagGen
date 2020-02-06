@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Auth {
+extension TBX.Auth {
 
     /** Return Url from SAML login */
     public enum AuthSamlAssertGetAuthSamlAssert {

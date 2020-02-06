@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Account {
+extension Rocket.Account {
 
     /** Get the summary of a profile with a specific id under the active account. */
     public enum GetProfileWithId {

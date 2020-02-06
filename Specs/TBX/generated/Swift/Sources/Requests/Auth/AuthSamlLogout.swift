@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Auth {
+extension TBX.Auth {
 
     /** Return url from SAML logout */
     public enum AuthSamlLogout {

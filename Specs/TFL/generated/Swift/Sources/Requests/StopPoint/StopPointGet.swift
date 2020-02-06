@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension StopPoint {
+extension TFL.StopPoint {
 
     /** Gets a list of StopPoints corresponding to the given list of stop ids. */
     public enum StopPointGet {

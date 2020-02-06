@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Line {
+extension TFL.Line {
 
     /** Gets lines that serve the given modes. */
     public enum LineGetByMode {

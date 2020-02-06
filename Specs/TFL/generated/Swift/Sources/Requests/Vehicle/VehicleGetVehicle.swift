@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Vehicle {
+extension TFL.Vehicle {
 
     /** Gets the Emissions Surcharge compliance for the Vehicle */
     public enum VehicleGetVehicle {

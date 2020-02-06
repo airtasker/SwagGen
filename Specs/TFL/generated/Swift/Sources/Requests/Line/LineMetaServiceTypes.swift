@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Line {
+extension TFL.Line {
 
     /** Gets a list of valid ServiceTypes to filter on */
     public enum LineMetaServiceTypes {

@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension TravelTime {
+extension TFL.TravelTime {
 
     /** Gets the TravelTime overlay. */
     public enum TravelTimeGetCompareOverlay {

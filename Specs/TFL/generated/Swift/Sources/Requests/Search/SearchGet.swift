@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Search {
+extension TFL.Search {
 
     /** Search the site for occurrences of the query string. The maximum number of results returned is equal to the maximum page size
             of 100. To return subsequent pages, use the paginated overload. */

@@ -18,14 +18,22 @@ public protocol ResponseDecoder {
 
 extension JSONDecoder: ResponseDecoder {}
 
+public protocol RequestEncoder {
+
+    func encode<T: Encodable>(_ value: T) throws -> Data
+}
+
+extension JSONEncoder: RequestEncoder {}
+
 extension APIModel {
     func encode() -> [String: Any] {
         guard
             let jsonData = try? JSONEncoder().encode(self),
-            let jsonDictionary = try? JSONSerialization.jsonObject(with: jsonData) as? [String: Any] else {
+            let jsonValue = try? JSONSerialization.jsonObject(with: jsonData),
+            let jsonDictionary = jsonValue as? [String: Any] else {
                 return [:]
         }
-        return jsonDictionary ?? [:]
+        return jsonDictionary
     }
 }
 
@@ -122,7 +130,7 @@ extension KeyedDecodingContainer {
         do {
             container = try nestedUnkeyedContainer(forKey: key)
         } catch {
-            if Config.safeArrayDecoding {
+            if Petstore.safeArrayDecoding {
                 return array
             } else {
                 throw error
@@ -134,7 +142,7 @@ extension KeyedDecodingContainer {
                 let element = try container.decode(T.self)
                 array.append(element)
             } catch {
-                if Config.safeArrayDecoding {
+                if Petstore.safeArrayDecoding {
                     // hack to advance the current index
                     _ = try? container.decode(AnyCodable.self)
                 } else {
@@ -156,7 +164,7 @@ extension KeyedDecodingContainer {
     }
 
     fileprivate func decodeOptional<T>(_ closure: () throws -> T? ) throws -> T? {
-        if Config.safeOptionalDecoding {
+        if Petstore.safeOptionalDecoding {
             do {
                 return try closure()
             } catch {
@@ -306,7 +314,7 @@ extension DateDay {
 
 extension Date {
     func encode() -> Any {
-        return Config.dateEncodingFormatter.string(from: self)
+        return Petstore.dateEncodingFormatter.string(from: self)
     }
 }
 
@@ -334,7 +342,7 @@ extension Dictionary where Key == String, Value: RawRepresentable {
     }
 }
 
-extension Foundation.UUID {
+extension UUID {
     func encode() -> Any {
         return uuidString
     }

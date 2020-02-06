@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Line {
+extension TFL.Line {
 
     /** Search for lines or routes matching the query string */
     public enum LineSearch {

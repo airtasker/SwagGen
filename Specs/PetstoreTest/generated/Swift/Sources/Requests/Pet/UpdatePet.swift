@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Pet {
+extension PetstoreTest.Pet {
 
     /** Update an existing pet */
     public enum UpdatePet {
@@ -16,11 +16,10 @@ extension Pet {
 
             public var body: Pet
 
-            public init(body: Pet) {
+            public init(body: Pet, encoder: RequestEncoder? = nil) {
                 self.body = body
-                super.init(service: UpdatePet.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: UpdatePet.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
         }

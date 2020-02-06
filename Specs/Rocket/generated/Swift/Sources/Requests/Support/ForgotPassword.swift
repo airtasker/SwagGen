@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Support {
+extension Rocket.Support {
 
     /** Request the password of an account's primary profile be reset.
 Should be called when a user has forgotten their password.
@@ -23,11 +23,10 @@ endpoint here, along with the password reset token provided in the original link
 
             public var body: PasswordResetEmailRequest
 
-            public init(body: PasswordResetEmailRequest) {
+            public init(body: PasswordResetEmailRequest, encoder: RequestEncoder? = nil) {
                 self.body = body
-                super.init(service: ForgotPassword.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: ForgotPassword.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
         }

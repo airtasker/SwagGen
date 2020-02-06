@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Profile {
+extension Rocket.Profile {
 
     /** Get the watched status info for an item under the active profile. */
     public enum GetItemWatchedStatus {

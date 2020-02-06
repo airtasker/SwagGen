@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Support {
+extension Rocket.Support {
 
     /** When a user requests to reset their password via the /request-password-reset endpoint, an
 email is sent to the email address of the primary profile of the account. This email contains a link
@@ -24,11 +24,10 @@ header as a bearer token.
 
             public var body: PasswordResetRequest
 
-            public init(body: PasswordResetRequest) {
+            public init(body: PasswordResetRequest, encoder: RequestEncoder? = nil) {
                 self.body = body
-                super.init(service: ResetPassword.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: ResetPassword.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
         }

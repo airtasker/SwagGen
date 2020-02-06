@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Content {
+extension Rocket.Content {
 
     /** Returns the details of a Plan with the specified id. */
     public enum GetPlan {

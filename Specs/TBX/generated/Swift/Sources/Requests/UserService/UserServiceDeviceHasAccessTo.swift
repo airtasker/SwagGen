@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension UserService {
+extension TBX.UserService {
 
     /** Check if the Device has access to execute an action with the URN */
     public enum UserServiceDeviceHasAccessTo {

@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Content {
+extension Rocket.Content {
 
     /** Returns schedules for a defined set of channels over a requested period.
 Schedules are requested in hour blocks and returned grouped by the channel

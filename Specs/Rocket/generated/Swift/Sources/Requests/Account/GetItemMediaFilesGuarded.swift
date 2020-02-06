@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Account {
+extension Rocket.Account {
 
     /** Get the video files associated with an item given maximum resolution, device type
 and one or more delivery types.

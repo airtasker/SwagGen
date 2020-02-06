@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension User {
+extension PetstoreTest.User {
 
     /** Creates list of users with given input array */
     public enum CreateUsersWithListInput {
@@ -16,11 +16,10 @@ extension User {
 
             public var body: [User]
 
-            public init(body: [User]) {
+            public init(body: [User], encoder: RequestEncoder? = nil) {
                 self.body = body
-                super.init(service: CreateUsersWithListInput.service) {
-                    let jsonEncoder = JSONEncoder()
-                    return try jsonEncoder.encode(body)
+                super.init(service: CreateUsersWithListInput.service) { defaultEncoder in
+                    return try (encoder ?? defaultEncoder).encode(body)
                 }
             }
         }

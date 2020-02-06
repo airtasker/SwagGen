@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension UserService {
+extension TBX.UserService {
 
     /** Find a Device by device id */
     public enum UserServiceGetDevice {

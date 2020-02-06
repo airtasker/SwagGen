@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension Place {
+extension TFL.Place {
 
     /** Gets the places that lie within the bounding box defined by the lat/lon of its north-west and south-east corners. Optionally filters
             on type and can strip properties for a smaller payload. */

@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension StopPoint {
+extension TFL.StopPoint {
 
     /** Search StopPoints by their common name, or their 5-digit Countdown Bus Stop Code. */
     public enum SearchStopPointsByPath {
